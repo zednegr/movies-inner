@@ -7,11 +7,9 @@ function App() {
 
   return (
     <>
-      
-
       <Routes>
-          <Route path='/' element={<Header />} />
-          <Route path='/movie-inner' element={<MoviesInner />}/>
+        <Route path='/' element={<Header />} />
+        <Route path='/movie-inner' element={<MoviesInner />} />
       </Routes>
     </>
   )
