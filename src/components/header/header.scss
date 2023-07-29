@@ -1,0 +1,113 @@
+.section {
+    background: linear-gradient(180deg, #3E3E3E 0%, #070707 100%);
+    padding-bottom: 150px;
+}
+
+.about {
+    font-family: 'Imprima', sans-serif;
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 400;
+    color: #FFF;
+    margin-bottom: 48px;
+}
+
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 58px;
+}
+
+.movie-cards-wrapper {
+    display: flex;
+    gap: 48px;
+    flex-wrap: wrap;
+}
+
+.card-movie {
+    width: 294px;
+    height: calc(361px + 141px);
+}
+
+.card-avatar {
+    img {
+        width: 300px;
+        height: 450px;
+    }
+}
+
+.card-desc {
+    display: flex;
+    gap: 133px;
+    justify-content: space-between;
+    margin-top: 33px;
+    margin-bottom: 22px;
+
+    .movie-name-h4 {
+        font-family: Electrolize, sans-serif;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        color: #fff;
+    }
+
+    .movie-year-h5 {
+        font-family: Imprima, sans-serif;
+        color: #CF0;
+        font-size: 17.589px;
+        font-style: normal;
+        font-weight: 400;
+    }
+}
+
+.card-data {
+    display: flex;
+    justify-content: space-between;
+    gap: 150px;
+
+    .card-data-qualty-p {
+        font-family: Imprima, sans-serif;
+        font-size: 12.792px;
+        font-style: normal;
+        font-weight: 400;
+        color: #FFF;
+        border: 1px solid #fff;
+        padding: 2px;
+    }
+}
+
+.card-min-reyting {
+    display: flex;
+    gap: 29px;
+
+    .card-min {
+        width: 60px;
+        display: flex;
+        align-items: center;
+        gap: 3px;
+    }
+
+    .card-reyting {
+        width: 30px;
+        display: flex;
+        align-items: center;
+        gap: 3px;
+    }
+
+    .card-min-p {
+        font-family: Imprima, sans-serif;
+        font-size: 10.393px;
+        font-style: normal;
+        font-weight: 400;
+        color: #FFF;
+    }
+
+    .card-reyting-p {
+        font-family: Imprima, sans-serif;
+        font-size: 10.393px;
+        font-style: normal;
+        font-weight: 400;
+        color: #FFF;
+    }
+}
