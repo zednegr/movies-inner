@@ -1,6 +1,14 @@
-.movies_inner {
-    background-color: aqua;
-    padding-bottom: 150px;
+.movies_bg {
+    width: 100%;
+    min-height: 100vh;
+    background: url(https://images2.alphacoders.com/119/1198451.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: darken;
+    background-color: rgba(0, 0, 0, 0.789);
+    // background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.41) 100%);
+    // filter: blur(2px);
 }
 
 .movies_inner-wrapper {
@@ -12,6 +20,7 @@
 .movie_inner-left-img {
     width: 314.672px;
     height: 426px;
+    border-radius: 10px;
 }
 
 .movies_inner-about {
@@ -40,9 +49,7 @@
 .movies_inner-info {
     width: 681px;
     display: flex;
-    background-color: #000;
     margin-top: 17px;
-
 }
 
 .movies_inner-dramma {
@@ -50,7 +57,7 @@
     height: 24.992px;
     background-color: #fff;
     margin-right: 21px;
-    
+    padding: 2px;
 
     .movies_inner-dramma-h5 {
         text-align: center;
@@ -92,7 +99,8 @@
 .movies_inner-min {
     width: 87px;
     margin-right: 17px;
-
+    display: flex;
+    gap: 2px;
 
     .movies_inner-min-h5 {
         color: #FFF;
@@ -101,15 +109,28 @@
         font-weight: 400;
         line-height: normal;
     }
+
+    .movies_inner-min-icon {
+        width: 21.584px;
+        height: 21.584px;
+    }
 }
 
 .movies_inner-year {
+    display: flex;
+    gap: 4px;
+
     .movies_inner-year-h5 {
         color: #FFF;
         font-family: Imprima;
         font-size: 19.981px;
         font-weight: 400;
         line-height: normal;
+    }
+
+    .movies_inner-year-icon {
+        width: 18.176px;
+        height: 18.176px;
     }
 }
 
