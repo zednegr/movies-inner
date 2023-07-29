@@ -1,7 +1,7 @@
 import './App.css'
 import { Routes, Route } from "react-router-dom"
 import Header from './components/header/header'
-import Movie from './pages/movie/movie'
+import MoviesInner from "./components/movies_inner/movies_inner"
 
 function App() {
 
@@ -11,7 +11,7 @@ function App() {
 
       <Routes>
           <Route path='/' element={<Header />} />
-          <Route path='/movie-inner' element={<Movie />}/>
+          <Route path='/movie-inner' element={<MoviesInner />}/>
       </Routes>
     </>
   )
