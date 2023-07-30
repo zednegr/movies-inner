@@ -35,7 +35,7 @@ function Header() {
                     {
                         getData?.map((item, index) => {
                             return (
-                                <NavLink to={"/movie-inner"}>
+                                <NavLink to={`/movie-inner/${item.id}`}>
                                     <div className="movie-cards-wrapper">
                                         <div className="card-movie">
                                             <div className="card-avatar">
