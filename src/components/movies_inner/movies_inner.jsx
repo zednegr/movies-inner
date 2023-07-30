@@ -1,5 +1,5 @@
 import "./movies_inner.scss"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { useParams } from "react-router-dom"
 import MoviesImg from "../../assets/img/movie.png"
 import MoviesShare from "../../assets/svg/movies-inner-share.svg"
@@ -8,16 +8,12 @@ import MoviesPlay from "../../assets/svg/movies-inner-play.svg"
 import MovieClock from "../../assets/svg/movie-clock.svg"
 import MovieCalendar from "../../assets/svg/movie-calendar.svg"
 
-
-
 function MoviesInner() {
 
     const [data, setgetData] = useState()
     const [loading, setLoading] = useState(true)
-
     const { movieId } = useParams()
-
-    console.log(movieId);
+    const elModal = useRef()
 
     useEffect(() => {
         fetch(`https://64b8278821b9aa6eb0799f1f.mockapi.io/movie/films/${movieId}`)
@@ -31,7 +27,6 @@ function MoviesInner() {
     if (loading) {
         return <h1>loading</h1>
     }
-
 
     return (
         <section className="movies_inner">
@@ -88,13 +83,27 @@ function MoviesInner() {
 
                                 <div className="movies_inner-play">
                                     <img className="movies_inner-play-img" src={MoviesPlay} alt="Play" />
-                                    <a className="movies_inner-play-btn" href="#">Play Now</a>
+                                    <button className="movies_inner-play-btn" onClick={(evt) => {
+                                        elModal.current.classList.add('modal-open')
+                                    }}>Play Now</button>
                                 </div>
                             </div>
 
                             <div className="movies_inner-desc">
                                 <p className="movies_inner-desc-p">{data?.desc}</p>
                             </div>
+                        </div>
+                    </div>
+
+
+
+                    <div className="modal" ref={elModal} onClick={(evt) => {
+                        if (evt.target.matches('.modal')) {
+                            elModal.current.classList.remove('modal-open')
+                        }
+                    }}>
+                        <div className="modal-inner">
+                            <h1>Bla qilomadm buyog'ini :(</h1>
                         </div>
                     </div>
                 </div>
