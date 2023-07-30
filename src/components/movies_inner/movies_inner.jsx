@@ -7,6 +7,7 @@ import MoviesStar from "../../assets/svg/movies-inner-star.svg"
 import MoviesPlay from "../../assets/svg/movies-inner-play.svg"
 import MovieClock from "../../assets/svg/movie-clock.svg"
 import MovieCalendar from "../../assets/svg/movie-calendar.svg"
+import Loading from "../loading/loading"
 
 function MoviesInner() {
 
@@ -25,7 +26,7 @@ function MoviesInner() {
     }, [])
 
     if (loading) {
-        return <h1>loading</h1>
+        return <Loading />
     }
 
     return (

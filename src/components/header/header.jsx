@@ -3,6 +3,8 @@ import { useState, useEffect } from "react"
 import MovieStar from "../../assets/svg/movie-star.svg"
 import MovieClock from "../../assets/svg/movie-clock.svg"
 import { NavLink } from "react-router-dom"
+import Loading from "../loading/loading"
+
 
 function Header() {
 
@@ -19,7 +21,7 @@ function Header() {
     }, [])
 
     if (loading) {
-        return <h1>loading</h1>
+        return <Loading />
     }
 
     return (
