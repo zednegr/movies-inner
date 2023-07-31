@@ -104,7 +104,6 @@ function MoviesInner() {
                         }
                     }}>
                         <div className="modal-inner">
-                            <h1>Bla qilomadm buyog'ini :(</h1>
                         </div>
                     </div>
                 </div>
