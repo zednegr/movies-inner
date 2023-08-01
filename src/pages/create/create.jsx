@@ -4,6 +4,7 @@ import "./create.scss"
 
 function Create() {
 
+
     const [name, setName] = useState('')
     const [img, setImg] = useState('')
     const [time, setTime] = useState('')
@@ -15,7 +16,12 @@ function Create() {
     const [url, setUrl] = useState('')
     const [bg, setBg] = useState('')
 
-    const data = { 'name': name, 'img': img, 'time': time, 'rating': rating, 'desc': desc, 'quality': quality, 'genre': genre, 'year': year, 'url': url, 'bg': bg}
+    // Button loading
+
+    const [loading, setLoading] = useState(false)
+    const [inputValue, setInputValue] = useState('');
+
+    const data = { 'name': name, 'img': img, 'time': time, 'rating': rating, 'desc': desc, 'quality': quality, 'genre': genre, 'year': year, 'url': url, 'bg': bg }
 
     function onSubmit(e) {
         e.preventDefault()
@@ -29,11 +35,20 @@ function Create() {
 
         }).then(res => console.log(res))
     }
+
+    const handleSubmit = () => {
+        if (!inputValue) {
+          console.log('Xato: Inputni to\'ldiring!');
+          return;
+        }
+      };
+
+      handleSubmit
+
     return (
         <section className="create-section" >
             <div className="container">
                 <div className="create-wrapper">
-                    <h1>Admin Panel</h1>
                     <form>
                         <input type="text" placeholder="Name" onChange={(e) => setName(e.target.value)} />
                         <input type="text" placeholder="Img" onChange={(e) => setImg(e.target.value)} />
@@ -45,7 +60,9 @@ function Create() {
                         <input type="text" placeholder="Year" onChange={(e) => setYear(e.target.value)} />
                         <input type="text" placeholder="Url" onChange={(e) => setUrl(e.target.value)} />
                         <input type="text" placeholder="Background" onChange={(e) => setBg(e.target.value)} />
-                        <button onClick={onSubmit}>Submit</button>
+                        <button className={`btn-slide ${loading ? 'loading' : ''}`} onClick={onSubmit} disabled={loading}>
+                            {loading ? 'Yuborilmoqda...' : 'Yuborish'}
+                        </button>
                     </form>
                 </div>
             </div>
