@@ -16,13 +16,15 @@ function Navbar() {
                     </div>
 
                     <ul className='nav_list'>
-                        <li><a href="">Home</a></li>
+                        <li><a href="">HOME</a></li>
                         <span>|</span>
-                        <li><a href="">Home</a></li>
+                        <li><a href="">MOVIE</a></li>
                         <span>|</span>
-                        <li><a href="">Home</a></li>
+                        <li><a href="">TV SHOW</a></li>
                         <span>|</span>
-                        <li><a href="">Home</a></li>
+                        <li><a href="">WEB SERIES</a></li>
+                        <span>|</span>
+                        <li><a href="">PRIMIUM</a></li>
                     </ul>
 
                     <div className="nav_right">

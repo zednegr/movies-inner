@@ -1,10 +1,12 @@
 import './hero.scss'
+import Navbar from "../../components/navbar/navbar"
 
 function Hero() {
 
     return (
         <section className='hero-section'>
             <div className="hero-bg">
+            <Navbar />
                 <div className="container">
                     <div className="hero-wrapper">
                         <div className="hero-about">

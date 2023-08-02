@@ -13,7 +13,6 @@ function App() {
 
   return (
     <>
-    <Navbar />
     <Hero />
       <Routes>
         <Route path='/' element={<Header />} />
