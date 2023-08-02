@@ -1,4 +1,6 @@
-import { useState } from "react"
+import { useState, useRef } from "react"
+
+import { Toast } from 'primereact/toast';
 
 import "./create.scss"
 
@@ -21,45 +23,70 @@ function Create() {
     const [loading, setLoading] = useState(false)
     const [inputValue, setInputValue] = useState('');
 
+
+    const toast = useRef(null);
+    const showError = () => {
+        toast.current.show({ severity: 'error', summary: 'Error', detail: 'Oxirgacha to\'ldiring brat!', life: 3000 });
+    }
+    const showSuccess = () => {
+        toast.current.show({ severity: 'success', summary: 'Success', detail: 'Malades !', life: 3000 });
+    }
+
+
     const data = { 'name': name, 'img': img, 'time': time, 'rating': rating, 'desc': desc, 'quality': quality, 'genre': genre, 'year': year, 'url': url, 'bg': bg }
 
     function onSubmit(e) {
         e.preventDefault()
 
-        fetch('https://64b8278821b9aa6eb0799f1f.mockapi.io/movie/films', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
+        if (name == '' || img == '' || time == '' || rating == '' || desc == '' || quality == '' || genre == '' || year == '' || url == '' || bg == '') {
+            showError()
+        } else {
+            setLoading(true)
 
-        }).then(res => console.log(res))
+            fetch('https://64b8278821b9aa6eb0799f1f.mockapi.io/movie/films', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+
+            }).then(res => {
+                console.log(res);
+                setLoading(false)
+                setName('')
+                setImg('')
+                setTime('')
+                setRating('')
+                setDesc('')
+                setQuality('')
+                setGenre('')
+                setYear('')
+                setUrl('')
+                setBg('')
+                
+                showSuccess()
+            })
+        }
     }
 
-    const handleSubmit = () => {
-        if (!inputValue) {
-          console.log('Xato: Inputni to\'ldiring!');
-          return;
-        }
-      };
-
-      handleSubmit
 
     return (
         <section className="create-section" >
+
+            <Toast ref={toast} />
             <div className="container">
                 <div className="create-wrapper">
                     <form>
-                        <input type="text" placeholder="Name" onChange={(e) => setName(e.target.value)} />
-                        <input type="text" placeholder="Img" onChange={(e) => setImg(e.target.value)} />
-                        <input type="text" placeholder="Time" onChange={(e) => setTime(e.target.value)} />
-                        <input type="text" placeholder="Rating" onChange={(e) => setRating(e.target.value)} />
-                        <input type="text" placeholder="Desc" onChange={(e) => setDesc(e.target.value)} />
-                        <input type="text" placeholder="Quality" onChange={(e) => setQuality(e.target.value)} />
-                        <input type="text" placeholder="Genre" onChange={(e) => setGenre(e.target.value)} />
-                        <input type="text" placeholder="Year" onChange={(e) => setYear(e.target.value)} />
-                        <input type="text" placeholder="Url" onChange={(e) => setUrl(e.target.value)} />
-                        <input type="text" placeholder="Background" onChange={(e) => setBg(e.target.value)} />
+                        <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
+                        <input type="text" placeholder="Img" value={img} onChange={(e) => setImg(e.target.value)} />
+                        <input type="text" placeholder="Time" value={time} onChange={(e) => setTime(e.target.value)} />
+                        <input type="text" placeholder="Rating" value={rating} onChange={(e) => setRating(e.target.value)} />
+                        <input type="text" placeholder="Desc" value={desc} onChange={(e) => setDesc(e.target.value)} />
+                        <input type="text" placeholder="Quality" value={quality} onChange={(e) => setQuality(e.target.value)} />
+                        <input type="text" placeholder="Genre" value={genre} onChange={(e) => setGenre(e.target.value)} />
+                        <input type="text" placeholder="Year" value={year} onChange={(e) => setYear(e.target.value)} />
+                        <input type="text" placeholder="Url" value={url} onChange={(e) => setUrl(e.target.value)} />
+                        <input type="text" placeholder="Background" value={bg} onChange={(e) => setBg(e.target.value)} />
                         <button className={`btn-slide ${loading ? 'loading' : ''}`} onClick={onSubmit} disabled={loading}>
                             {loading ? 'Yuborilmoqda...' : 'Yuborish'}
                         </button>
