@@ -1,0 +1,258 @@
+.movies_bg {
+  width: 100%;
+  min-height: 100vh;
+  background: url(https://images2.alphacoders.com/119/1198451.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: darken;
+  background-color: rgba(0, 0, 0, 0.789);
+}
+
+.movies_inner-wrapper {
+  display: flex;
+  gap: 81px;
+  padding-top: 161px;
+}
+
+.movie_inner-left-img {
+  width: 314.672px;
+  height: 426px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+.movie_inner-left-img:hover {
+  transform: scale(1.1);
+}
+
+.movies_inner-about {
+  width: 328.304px;
+}
+.movies_inner-about .movies_inner-about-h4 {
+  font-family: Gurajada;
+  font-size: 30.148px;
+  font-weight: 400;
+  color: #B0DC00;
+}
+
+.movies_inner-name {
+  width: 284px;
+}
+.movies_inner-name .movies_inner-name-h3 {
+  font-family: Gurajada;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  color: #FFF;
+}
+
+.movies_inner-info {
+  width: 681px;
+  display: flex;
+  margin-top: 17px;
+}
+
+.movies_inner-dramma {
+  width: auto;
+  height: 24.992px;
+  background-color: #fff;
+  margin-right: 21px;
+  padding: 2px;
+}
+.movies_inner-dramma .movies_inner-dramma-h5 {
+  text-align: center;
+  color: #000;
+  font-family: Imprima;
+  font-size: 16.234px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.movies_inner-quality {
+  margin-right: 20px;
+}
+.movies_inner-quality .movies_inner-quality-h5 {
+  color: #FFF;
+  font-family: Imprima;
+  font-size: 14.531px;
+  font-weight: 400;
+  line-height: normal;
+  border: 1px solid white;
+  padding: 2px;
+}
+
+.movies_inner-type {
+  margin-right: 17px;
+}
+.movies_inner-type .movies_inner-type-h5 {
+  color: #FFF;
+  font-family: Imprima;
+  font-size: 19.981px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.movies_inner-min {
+  width: 87px;
+  margin-right: 17px;
+  display: flex;
+  gap: 2px;
+}
+.movies_inner-min .movies_inner-min-h5 {
+  color: #FFF;
+  font-family: Imprima;
+  font-size: 17.256px;
+  font-weight: 400;
+  line-height: normal;
+}
+.movies_inner-min .movies_inner-min-icon {
+  width: 21.584px;
+  height: 21.584px;
+}
+
+.movies_inner-year {
+  display: flex;
+  gap: 4px;
+}
+.movies_inner-year .movies_inner-year-h5 {
+  color: #FFF;
+  font-family: Imprima;
+  font-size: 19.981px;
+  font-weight: 400;
+  line-height: normal;
+}
+.movies_inner-year .movies_inner-year-icon {
+  width: 18.176px;
+  height: 18.176px;
+}
+
+.movies_inner-play-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 483.936px;
+  height: 112.464px;
+  display: flex;
+  border-radius: 19.312px;
+  background: rgba(63, 63, 63, 0.44);
+  padding: 20px;
+  margin-top: 14px;
+}
+
+.movies_inner-share {
+  margin-right: 59px;
+}
+.movies_inner-share .movies_inner-share-img {
+  width: 46.576px;
+  height: 46.576px;
+  cursor: pointer;
+}
+.movies_inner-share .movies_inner-share-h5 {
+  text-align: center;
+  color: #FFF;
+  font-family: Imprima;
+  font-size: 13.687px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.movies_inner-rate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 55px;
+}
+.movies_inner-rate .movies_inner-rate-h5 {
+  color: #FFF;
+  font-family: Imprima;
+  font-size: 20.53px;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 7px;
+}
+
+.movies_inner-rate-wrapper {
+  display: flex;
+  gap: 5px;
+}
+.movies_inner-rate-wrapper .movies_inner-rate-star {
+  width: 33.556px;
+  height: 33.556px;
+  cursor: pointer;
+}
+.movies_inner-rate-wrapper .movies_inner-rate-h4 {
+  color: #FFF;
+  font-family: Imprima;
+  font-size: 29.063px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.movies_inner-play {
+  position: relative;
+}
+.movies_inner-play .movies_inner-play-img {
+  position: absolute;
+  width: 22.307px;
+  height: 22.307px;
+  top: 9px;
+  left: 9px;
+  cursor: pointer;
+}
+.movies_inner-play .movies_inner-play-btn {
+  padding: 9px 32px;
+  border-radius: 22.307px;
+  border: 1.859px solid #CF0;
+  background: rgba(36, 36, 36, 0.96);
+  color: #FFF;
+  font-family: Imprima;
+  font-size: 16.348px;
+  font-weight: 400;
+  line-height: normal;
+  transition: all 0.2s ease-in-out;
+}
+.movies_inner-play .movies_inner-play-btn:hover {
+  background-color: rgb(147, 183, 0);
+}
+
+.movies_inner-desc {
+  width: 839.504px;
+  height: 82.928px;
+  margin-top: 27px;
+}
+.movies_inner-desc .movies_inner-desc-p {
+  color: #FFF;
+  font-family: Gurajada;
+  font-size: 23.856px;
+  font-weight: 400;
+  line-height: 74%;
+}
+
+.modal {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.modal-open {
+  display: flex;
+}
+
+.modal-inner {
+  position: absolute;
+  width: 850px;
+  height: 500px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(223, 241, 255);
+  border-radius: 10px;
+  padding: 20px;
+  cursor: pointer;
+}/*# sourceMappingURL=movies_inner.css.map */

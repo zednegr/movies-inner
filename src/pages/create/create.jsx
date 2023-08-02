@@ -43,7 +43,7 @@ function Create() {
         } else {
             setLoading(true)
 
-            fetch('https://64b8278821b9aa6eb0799f1f.mockapi.io/movie/films', {
+            fetch('https://64ca9c72700d50e3c7051e26.mockapi.io/movie/movies', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

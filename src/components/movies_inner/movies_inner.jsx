@@ -17,7 +17,7 @@ function MoviesInner() {
     const elModal = useRef()
 
     useEffect(() => {
-        fetch(`https://64b8278821b9aa6eb0799f1f.mockapi.io/movie/films/${movieId}`)
+        fetch(`https://64ca9c72700d50e3c7051e26.mockapi.io/movie/movies/${movieId}`)
             .then((res) => res.json())
             .then((data) => setgetData(data))
             .finally(() => {
@@ -31,7 +31,7 @@ function MoviesInner() {
 
     return (
         <section className="movies_inner">
-            <div className="movies_bg">
+            <div className="movies_bg" src={data?.bg}>
                 <div className="container">
                     <div className="movies_inner-wrapper">
                         <div className="movies_inner-left">
@@ -104,6 +104,7 @@ function MoviesInner() {
                         }
                     }}>
                         <div className="modal-inner">
+                            
                         </div>
                     </div>
                 </div>
