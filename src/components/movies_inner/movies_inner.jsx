@@ -8,6 +8,7 @@ import MoviesPlay from "../../assets/svg/movies-inner-play.svg"
 import MovieClock from "../../assets/svg/movie-clock.svg"
 import MovieCalendar from "../../assets/svg/movie-calendar.svg"
 import Loading from "../loading/loading"
+import ReactPlayer from 'react-player'
 
 function MoviesInner() {
 
@@ -104,7 +105,8 @@ function MoviesInner() {
                         }
                     }}>
                         <div className="modal-inner">
-                            
+                            <ReactPlayer url={data?.url} controls={true} width={'100%'} height={'100%'}/>
+
                         </div>
                     </div>
                 </div>
