@@ -4,6 +4,7 @@ import MovieStar from "../../assets/svg/movie-star.svg"
 import MovieClock from "../../assets/svg/movie-clock.svg"
 import { NavLink } from "react-router-dom"
 import Loading from "../loading/loading"
+import Hero from '../hero/hero'
 
 
 function Header() {
@@ -26,51 +27,52 @@ function Header() {
 
     return (
 
-        <div className="section">
-            <div className="container">
-                <div className="movie-about">
-                    <div className="about"><h1>Upcoming Movies</h1></div>
-                </div>
+        <>
+        <Hero />
+            <div className="section">
+                <div className="container">
+                    <div className="movie-about">
+                        <div className="about"><h1>Upcoming Movies</h1></div>
+                    </div>
 
-                <div className="wrapper">
+                    <div className="wrapper">
+                        {
+                            getData?.map((item, index) => {
+                                return (
+                                    <NavLink to={`/movie-inner/${item.id}`}>
+                                        <div className="movie-cards-wrapper">
+                                            <div className="card-movie">
+                                                <div className="card-avatar">
+                                                    <img src={item.img} alt="Movie" />
+                                                </div>
+                                                <div className="card-desc">
 
-                    {
-                        getData?.map((item, index) => {
-                            return (
-                                <NavLink to={`/movie-inner/${item.id}`}>
-                                    <div className="movie-cards-wrapper">
-                                        <div className="card-movie">
-                                            <div className="card-avatar">
-                                                <img src={item.img} alt="Movie" />
-                                            </div>
-                                            <div className="card-desc">
-
-                                                <div className="movie-name"><h4 className='movie-name-h4'>{item?.name.length > 15 ? item?.name.slice(0, 10) + "..." : item?.name}</h4></div>
-                                                <div className="movie-year"><h5 className='movie-year-h5'>{item?.year}</h5></div>
-
-                                            </div>
-                                            <div className="card-data">
-
-                                                <div className="card-data-qualty"><p className='card-data-qualty-p'>{item?.quality}</p></div>
-
-                                                <div className="card-min-reyting">
-
-                                                    <div className="card-min"><img className='MovieClock' src={MovieClock} width={'13px'} /><p className='card-min-p'>{item?.time}</p></div>
-                                                    <div className="card-reyting"><img className='MovieStar' src={MovieStar} width={'12px'} /><p className='card-reyting-p'>{item?.rating}</p></div>
+                                                    <div className="movie-name"><h4 className='movie-name-h4'>{item?.name.length > 15 ? item?.name.slice(0, 10) + "..." : item?.name}</h4></div>
+                                                    <div className="movie-year"><h5 className='movie-year-h5'>{item?.year}</h5></div>
 
                                                 </div>
+                                                <div className="card-data">
 
+                                                    <div className="card-data-qualty"><p className='card-data-qualty-p'>{item?.quality}</p></div>
+
+                                                    <div className="card-min-reyting">
+
+                                                        <div className="card-min"><img className='MovieClock' src={MovieClock} width={'13px'} /><p className='card-min-p'>{item?.time}</p></div>
+                                                        <div className="card-reyting"><img className='MovieStar' src={MovieStar} width={'12px'} /><p className='card-reyting-p'>{item?.rating}</p></div>
+
+                                                    </div>
+
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </NavLink>
-                            )
-                        })
-
-                    }
+                                    </NavLink>
+                                )
+                            })
+                        }
+                    </div>
                 </div>
             </div>
-        </div>
+        </>
     )
 }
 

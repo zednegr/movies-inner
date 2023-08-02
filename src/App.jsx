@@ -4,7 +4,6 @@ import Header from './components/header/header'
 import MoviesInner from "./components/movies_inner/movies_inner"
 import Create from './pages/create/create'
 import Navbar from './components/navbar/navbar'
-import Hero from './components/hero/hero'
 import 'primereact/resources/themes/lara-light-indigo/theme.css';
 import 'primereact/resources/primereact.min.css';
 
@@ -13,7 +12,6 @@ function App() {
 
   return (
     <>
-    <Hero />
       <Routes>
         <Route path='/' element={<Header />} />
         <Route path='/movie-inner/:movieId' element={<MoviesInner />} />
