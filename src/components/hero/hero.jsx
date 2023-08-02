@@ -4,7 +4,7 @@ function Hero() {
 
     return (
         <section className='hero-section'>
-            <div className="">
+            <div className="hero-bg">
                 <div className="container">
                     <div className="hero-wrapper">
                         <div className="hero-about">
@@ -32,6 +32,12 @@ function Hero() {
 
                                 <div className="hero-info-calendar">
                                     <h5 className='hero-info-calendar-h5'>2023</h5>
+                                </div>
+                            </div>
+
+                            <div className="hero-play">
+                                <div className="hero-play-wrapper">
+                                    <button className='hero-play-btn'>Play Now</button>
                                 </div>
                             </div>
                         </div>
