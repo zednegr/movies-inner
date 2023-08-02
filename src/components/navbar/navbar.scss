@@ -1,0 +1,65 @@
+.navbar-section {
+    background-color: transparent;
+
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    padding: 20px;
+}
+
+.brand {
+    display: flex;
+    gap: 2px;
+
+    .brand-h2 {
+        color: #FFF;
+        font-family: IM FELL French Canon;
+        font-size: 29.171px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+}
+
+.nav_list {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+    a {
+        color: #FFF;
+        font-family: Imprima;
+        font-size: 17.589px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    span {
+        width: 10.888px;
+        color: #ACACAC;
+    }
+}
+
+
+
+.nav-btn {
+    padding: 9px 32px;
+    border-radius: 22.307px;
+    border: 1.859px solid #CF0;
+    background: rgba(36, 36, 36, 0.96);
+    color: #FFF;
+    font-family: Imprima;
+    font-size: 16.348px;
+    font-weight: 400;
+    line-height: normal;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        background-color: rgb(147, 183, 0);
+    }
+}
