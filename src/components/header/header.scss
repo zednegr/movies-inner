@@ -39,13 +39,15 @@
 }
 
 .card-desc {
+    width: 294px;
+    gap: 100px;
     display: flex;
-    gap: 133px;
     justify-content: space-between;
     margin-top: 33px;
     margin-bottom: 22px;
 
     .movie-name-h4 {
+        height: 20px;
         font-family: Electrolize, sans-serif;
         font-size: 18px;
         font-style: normal;
