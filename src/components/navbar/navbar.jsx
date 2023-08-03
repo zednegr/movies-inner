@@ -1,6 +1,8 @@
-import './navbar.scss'
+import { NavLink as Link } from "react-router-dom"
 
+import './navbar.scss'
 import MoviesLogo from "../../assets/svg/movies-logo.svg"
+import Create from "../../pages/create/create"
 
 function Navbar() {
 
@@ -16,15 +18,25 @@ function Navbar() {
                     </div>
 
                     <ul className='nav_list'>
-                        <li><a href="">HOME</a></li>
-                        <span>|</span>
-                        <li><a href="">MOVIE</a></li>
-                        <span>|</span>
-                        <li><a href="">TV SHOW</a></li>
-                        <span>|</span>
-                        <li><a href="">WEB SERIES</a></li>
-                        <span>|</span>
-                        <li><a href="">PRIMIUM</a></li>
+                        <Link to={'/create'}>
+                            <p>API</p>
+                        </Link>
+                            <span>| </span>
+                        <Link>
+                            <p>MOVIE</p>
+                        </Link>
+                            <span>| </span>
+                        <Link>
+                            <p>TV SHOW</p>
+                        </Link>
+                            <span>| </span>
+                        <Link>
+                            <p>WEB SERIES</p>
+                        </Link>
+                            <span>| </span>
+                        <Link>
+                            <p>PRIMIUM</p>
+                        </Link>
                     </ul>
 
                     <div className="nav_right">
