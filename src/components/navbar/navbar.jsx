@@ -21,19 +21,19 @@ function Navbar() {
                         <Link to={'/create'}>
                             <p>API</p>
                         </Link>
-                            <span>| </span>
+                            <span>|</span>
                         <Link>
                             <p>MOVIE</p>
                         </Link>
-                            <span>| </span>
+                            <span>|</span>
                         <Link>
                             <p>TV SHOW</p>
                         </Link>
-                            <span>| </span>
+                            <span>|</span>
                         <Link>
                             <p>WEB SERIES</p>
                         </Link>
-                            <span>| </span>
+                            <span>|</span>
                         <Link>
                             <p>PRIMIUM</p>
                         </Link>
