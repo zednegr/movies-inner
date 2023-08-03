@@ -1,8 +1,6 @@
 import { NavLink as Link } from "react-router-dom"
-
 import './navbar.scss'
 import MoviesLogo from "../../assets/svg/movies-logo.svg"
-import Create from "../../pages/create/create"
 
 function Navbar() {
 
