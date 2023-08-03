@@ -73,18 +73,11 @@ function Create() {
 
     return (
         <section className="create-section" >
-
             <Toast ref={toast} />
-
             <div className="container">
-
-                {/* <div className="back">
-                    <NavLink to={'/'}>
-                        <p>Back to Home</p>
-                    </NavLink>
-                </div> */}
-
                 <div className="create-wrapper">
+
+
 
                     <div className="input-wrapper">
                         <form>
@@ -101,12 +94,17 @@ function Create() {
                             <button className={`btn-slide ${loading ? 'loading' : ''}`} onClick={onSubmit} disabled={loading}>
                                 {loading ? 'Yuborilmoqda...' : 'Yuborish'}
                             </button>
-                        </form>
-                    </div>
 
+                            <div className="back">
+                                <NavLink to={'/'}>
+                                    <p>Back to Home</p>
+                                </NavLink>
+                            </div>
+                        </form>
+
+                    </div>
                 </div>
             </div>
-
         </section>
     )
 }

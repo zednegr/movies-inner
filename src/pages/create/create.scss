@@ -10,6 +10,24 @@
     align-items: center;
 }
 
+.back {
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+
+    p {
+        color: #000;
+        font-size: 18px;
+        font-weight: 600;
+        font-family: Poppins;
+        transition: all .2s ease-in-out;
+
+        &:hover {
+            color: red;
+        }
+    }
+}
+
 form {
     position: relative;
     display: flex;
