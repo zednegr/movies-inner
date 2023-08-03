@@ -36,6 +36,11 @@
         font-style: normal;
         font-weight: 400;
         line-height: normal;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+            color: rgb(187, 230, 15);
+        }
     }
 
     span {
