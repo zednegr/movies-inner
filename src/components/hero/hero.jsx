@@ -10,6 +10,8 @@ function Hero() {
 
     return (
         <section className='hero-section'>
+                    <Navbar />
+
 
             <Swiper
 
@@ -28,7 +30,6 @@ function Hero() {
                 className="mySwiper"
             >
                 <SwiperSlide className='SliderOne'>
-                    <Navbar />
 
                     <div className="hero-wrapper">
                         <div className="container">
@@ -72,7 +73,6 @@ function Hero() {
                 </SwiperSlide>
 
                 <SwiperSlide className='SliderTwo'>
-                    <Navbar />
 
                     <div className="hero-wrapper">
                         <div className="container">

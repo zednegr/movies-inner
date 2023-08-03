@@ -7,7 +7,7 @@ function Navbar() {
     return (
 
         <section className='navbar-section'>
-            <div className="container">
+            <div className="nav-container">
                 <nav className='navbar'>
 
                     <div className="brand">
