@@ -1,4 +1,5 @@
 import { useState, useRef } from "react"
+import { NavLink } from "react-router-dom"
 
 import { Toast } from 'primereact/toast';
 
@@ -63,7 +64,7 @@ function Create() {
                 setYear('')
                 setUrl('')
                 setBg('')
-                
+
                 showSuccess()
             })
         }
@@ -74,23 +75,35 @@ function Create() {
         <section className="create-section" >
 
             <Toast ref={toast} />
+
             <div className="container">
+
+                {/* <div className="back">
+                    <NavLink to={'/'}>
+                        <p>Back to Home</p>
+                    </NavLink>
+                </div> */}
+
                 <div className="create-wrapper">
-                    <form>
-                        <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
-                        <input type="text" placeholder="Img" value={img} onChange={(e) => setImg(e.target.value)} />
-                        <input type="text" placeholder="Time" value={time} onChange={(e) => setTime(e.target.value)} />
-                        <input type="text" placeholder="Rating" value={rating} onChange={(e) => setRating(e.target.value)} />
-                        <input type="text" placeholder="Desc" value={desc} onChange={(e) => setDesc(e.target.value)} />
-                        <input type="text" placeholder="Quality" value={quality} onChange={(e) => setQuality(e.target.value)} />
-                        <input type="text" placeholder="Genre" value={genre} onChange={(e) => setGenre(e.target.value)} />
-                        <input type="text" placeholder="Year" value={year} onChange={(e) => setYear(e.target.value)} />
-                        <input type="text" placeholder="Url" value={url} onChange={(e) => setUrl(e.target.value)} />
-                        <input type="text" placeholder="Background" value={bg} onChange={(e) => setBg(e.target.value)} />
-                        <button className={`btn-slide ${loading ? 'loading' : ''}`} onClick={onSubmit} disabled={loading}>
-                            {loading ? 'Yuborilmoqda...' : 'Yuborish'}
-                        </button>
-                    </form>
+
+                    <div className="input-wrapper">
+                        <form>
+                            <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
+                            <input type="text" placeholder="Img" value={img} onChange={(e) => setImg(e.target.value)} />
+                            <input type="text" placeholder="Time" value={time} onChange={(e) => setTime(e.target.value)} />
+                            <input type="text" placeholder="Rating" value={rating} onChange={(e) => setRating(e.target.value)} />
+                            <input type="text" placeholder="Desc" value={desc} onChange={(e) => setDesc(e.target.value)} />
+                            <input type="text" placeholder="Quality" value={quality} onChange={(e) => setQuality(e.target.value)} />
+                            <input type="text" placeholder="Genre" value={genre} onChange={(e) => setGenre(e.target.value)} />
+                            <input type="text" placeholder="Year" value={year} onChange={(e) => setYear(e.target.value)} />
+                            <input type="text" placeholder="Url" value={url} onChange={(e) => setUrl(e.target.value)} />
+                            <input type="text" placeholder="Background" value={bg} onChange={(e) => setBg(e.target.value)} />
+                            <button className={`btn-slide ${loading ? 'loading' : ''}`} onClick={onSubmit} disabled={loading}>
+                                {loading ? 'Yuborilmoqda...' : 'Yuborish'}
+                            </button>
+                        </form>
+                    </div>
+
                 </div>
             </div>
 
