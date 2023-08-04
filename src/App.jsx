@@ -6,6 +6,7 @@ import Create from './pages/create/create'
 import Navbar from './components/navbar/navbar'
 import 'primereact/resources/themes/lara-light-indigo/theme.css';
 import 'primereact/resources/primereact.min.css';
+import MoviesEdit from './components/movies_edit/movies_edit'
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path='/' element={<Header />} />
         <Route path='/movie-inner/:movieId' element={<MoviesInner />} />
         <Route path='/create' element={<Create />} />
+        <Route path='/movies_edit' element={<MoviesEdit />} />
       </Routes>
     </>
   )
