@@ -14,6 +14,7 @@ function MoviesInner() {
 
     const [data, setgetData] = useState()
     const [loading, setLoading] = useState(true)
+    const [paus, setPaus] = useState(true)
     const { movieId } = useParams()
     const elModal = useRef()
 
@@ -87,6 +88,7 @@ function MoviesInner() {
                                     <img className="movies_inner-play-img" src={MoviesPlay} alt="Play" />
                                     <button className="movies_inner-play-btn" onClick={(evt) => {
                                         elModal.current.classList.add('modal-open')
+                                        setPaus(true)
                                     }}>Play Now</button>
                                 </div>
                             </div>
@@ -102,10 +104,11 @@ function MoviesInner() {
                     <div className="modal" ref={elModal} onClick={(evt) => {
                         if (evt.target.matches('.modal')) {
                             elModal.current.classList.remove('modal-open')
+                            setPaus(false)
                         }
                     }}>
                         <div className="modal-inner">
-                            <ReactPlayer url={data?.url} controls={true} width={'100%'} height={'100%'}/>
+                            <ReactPlayer url={data?.url} controls={true} width={'100%'} height={'100%'} playing={paus}/>
 
                         </div>
                     </div>
