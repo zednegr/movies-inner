@@ -20,8 +20,8 @@ function Navbar() {
                             <p>API</p>
                         </Link>
                             <span>|</span>
-                        <Link>
-                            <p>MOVIE</p>
+                        <Link to={'/movies_edit'}>
+                            <p>EDIT API</p>
                         </Link>
                             <span>|</span>
                         <Link>
