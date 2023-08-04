@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 
 import './movies_edit.scss'
+import MoviesModal from "./movies_edit-modal"
 
 function MoviesEdit() {
 
@@ -49,6 +50,8 @@ function MoviesEdit() {
                             )
                         })
                     }
+
+                    <MoviesModal />
                 </div>
             </div>
 
