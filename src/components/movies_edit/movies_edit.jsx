@@ -8,6 +8,7 @@ function MoviesEdit() {
     const [data, setData] = useState()
     const [getData, setGetData] = useState()
     const [loading, setLoading] = useState(false)
+    const [openModal, setOpenModal] = useState(false)
 
     useEffect(() => {
         fetch(`https://64ca9c72700d50e3c7051e26.mockapi.io/movie/movies`)
@@ -46,12 +47,13 @@ function MoviesEdit() {
                                     <button onClick={() => onDelete(item.id)}>
                                         Delete
                                     </button>
+                                    <button onClick={() => setOpenModal(true)}>Edit</button>
                                 </div>
                             )
                         })
                     }
 
-                    <MoviesModal />
+                    <MoviesModal openModal={openModal} setOpenModal={setOpenModal} />
                 </div>
             </div>
 
