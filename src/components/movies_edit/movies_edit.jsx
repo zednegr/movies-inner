@@ -7,6 +7,7 @@ import axios from "axios"
 function MoviesEdit() {
 
     const [data, setData] = useState()
+    const [edit, setEdit] = useState()
     const [getData, setGetData] = useState()
     const [loading, setLoading] = useState(false)
     const [openModal, setOpenModal] = useState(false)
@@ -30,6 +31,18 @@ function MoviesEdit() {
             })
     }
 
+    function onEdit(id) {
+
+        axios.put(`https://64ca9c72700d50e3c7051e26.mockapi.io/movie/movies/${id}`, {
+        })
+
+            .then((data) => {
+                setData(data)
+                setLoading(false)
+            })
+
+    }
+    
     return (
         <section className='movies_edit-section'>
             <div className="container">
