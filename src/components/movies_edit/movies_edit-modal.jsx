@@ -14,7 +14,7 @@ function MoviesModal({ openModal, setOpenModal }) {
                 }}>
                     <div className="modal_inner">
                         <h1>Hi modal</h1>
-                    </div> 
+                    </div>
                 </div>      
             </div>
 

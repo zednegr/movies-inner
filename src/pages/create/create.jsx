@@ -1,9 +1,9 @@
 import { useState, useRef } from "react"
 import { NavLink } from "react-router-dom"
-
 import { Toast } from 'primereact/toast';
 
 import "./create.scss"
+import axios from "axios";
 
 function Create() {
 
@@ -44,12 +44,18 @@ function Create() {
         } else {
             setLoading(true)
 
-            fetch('https://64ca9c72700d50e3c7051e26.mockapi.io/movie/movies', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
+            axios.post('https://64ca9c72700d50e3c7051e26.mockapi.io/movie/movies', {
+
+            name,
+            img,
+            time,
+            rating,
+            desc,
+            quality,
+            genre,
+            year,
+            url,
+            bg
 
             }).then(res => {
                 console.log(res);
@@ -69,7 +75,6 @@ function Create() {
             })
         }
     }
-
 
     return (
         <section className="create-section" >
