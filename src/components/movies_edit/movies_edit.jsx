@@ -13,19 +13,17 @@ function MoviesEdit() {
 
     useEffect(() => {
         axios('https://64ca9c72700d50e3c7051e26.mockapi.io/movie/movies')
-        .then(res => console.log(res))
+            .then((res) => setGetData(res.data))
             .finally(() => {
                 setLoading(false)
             })
     }, [])
-
 
     function onDelete(id) {
 
         axios.delete(`https://64ca9c72700d50e3c7051e26.mockapi.io/movie/movies/${id}`, {
         })
 
-            .then((res) => res.json())
             .then((data) => {
                 setData(data)
                 setLoading(false)
