@@ -5,17 +5,17 @@ import MovieClock from "../../assets/svg/movie-clock.svg"
 import { NavLink } from "react-router-dom"
 import Loading from "../loading/loading"
 import Hero from '../hero/hero'
+import axios from "axios"
 
 
 function Header() {
 
-    const [getData, setgetData] = useState()
+    const [data, setGetData] = useState([])
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        fetch('https://64ca9c72700d50e3c7051e26.mockapi.io/movie/movies')
-            .then((res) => res.json())
-            .then((data) => setgetData(data))
+        axios('https://64ca9c72700d50e3c7051e26.mockapi.io/movie/movies')
+            .then((res) => setGetData(res.data))
             .finally(() => {
                 setLoading(false)
             })
@@ -28,7 +28,7 @@ function Header() {
     return (
 
         <>
-        <Hero />
+            <Hero />
             <div className="section">
                 <div className="container">
                     <div className="movie-about">
@@ -37,13 +37,13 @@ function Header() {
 
                     <div className="wrapper">
                         {
-                            getData?.map((item, index) => {
+                            data?.map(item => {
                                 return (
                                     <NavLink to={`/movie-inner/${item.id}`}>
                                         <div className="movie-cards-wrapper">
                                             <div className="card-movie">
                                                 <div className="card-avatar">
-                                                    <img src={item.img} alt="Movie" />
+                                                    <img src={item?.img} alt="Movie" />
                                                 </div>
                                                 <div className="card-desc">
 

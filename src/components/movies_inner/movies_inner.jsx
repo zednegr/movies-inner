@@ -9,19 +9,19 @@ import MovieClock from "../../assets/svg/movie-clock.svg"
 import MovieCalendar from "../../assets/svg/movie-calendar.svg"
 import Loading from "../loading/loading"
 import ReactPlayer from 'react-player'
+import axios from "axios"
 
 function MoviesInner() {
 
-    const [data, setgetData] = useState()
+    const [data, setGetData] = useState()
     const [loading, setLoading] = useState(true)
     const [paus, setPaus] = useState(true)
     const { movieId } = useParams()
     const elModal = useRef()
 
     useEffect(() => {
-        fetch(`https://64ca9c72700d50e3c7051e26.mockapi.io/movie/movies/${movieId}`)
-            .then((res) => res.json())
-            .then((data) => setgetData(data))
+        axios(`https://64ca9c72700d50e3c7051e26.mockapi.io/movie/movies/${movieId}`)
+            .then((res) => setGetData(res.data))
             .finally(() => {
                 setLoading(false)
             })
@@ -109,7 +109,6 @@ function MoviesInner() {
                     }}>
                         <div className="modal-inner">
                             <ReactPlayer url={data?.url} controls={true} width={'100%'} height={'100%'} playing={paus}/>
-
                         </div>
                     </div>
                 </div>

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 
 import './movies_edit.scss'
 import MoviesModal from "./movies_edit-modal"
+import axios from "axios"
 
 function MoviesEdit() {
 
@@ -11,9 +12,8 @@ function MoviesEdit() {
     const [openModal, setOpenModal] = useState(false)
 
     useEffect(() => {
-        fetch(`https://64ca9c72700d50e3c7051e26.mockapi.io/movie/movies`)
-            .then((res) => res.json())
-            .then((data) => setGetData(data))
+        axios('https://64ca9c72700d50e3c7051e26.mockapi.io/movie/movies')
+        .then(res => console.log(res))
             .finally(() => {
                 setLoading(false)
             })
@@ -22,8 +22,7 @@ function MoviesEdit() {
 
     function onDelete(id) {
 
-        fetch(`https://64ca9c72700d50e3c7051e26.mockapi.io/movie/movies/${id}`, {
-            method: 'DELETE'
+        axios.delete(`https://64ca9c72700d50e3c7051e26.mockapi.io/movie/movies/${id}`, {
         })
 
             .then((res) => res.json())

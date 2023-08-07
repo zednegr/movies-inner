@@ -6,6 +6,7 @@ import MoviesStar from "../../assets/svg/movies-inner-star.svg"
 import MoviesPlay from "../../assets/svg/movies-inner-play.svg"
 import MovieClock from "../../assets/svg/movie-clock.svg"
 import MovieCalendar from "../../assets/svg/movie-calendar.svg"
+import axios from "axios"
 
 function Movie() {
 
@@ -17,9 +18,8 @@ function Movie() {
     console.log(movieId);
 
     useEffect(() => {
-        fetch(`https://64ca9c72700d50e3c7051e26.mockapi.io/movie/movies`)
-            .then((res) => res.json())
-            .then((data) => setgetData(data))
+        axios('https://64ca9c72700d50e3c7051e26.mockapi.io/movie/movies')
+        .then(res => console.log(res))
             .finally(() => {
                 setLoading(false)
             })
