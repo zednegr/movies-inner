@@ -6,7 +6,7 @@ import axios from "axios"
 
 function MoviesEdit() {
 
-    // const [data, setData] = useState()
+    const [data, setData] = useState()
     const [getData, setGetData] = useState()
     const [loading, setLoading] = useState(false)
     const [openModal, setOpenModal] = useState(false)

@@ -9,7 +9,7 @@ function MoviesModal({ openModal, setOpenModal, modalItem }) {
     const [loading, setLoading] = useState(false)
     const [name, setName] = useState()
     const [year, setYear] = useState()
-
+    const data = {name: 'name', year: 'year'}
 
     useEffect(() => {
         axios('https://64ca9c72700d50e3c7051e26.mockapi.io/movie/movies')
@@ -22,8 +22,22 @@ function MoviesModal({ openModal, setOpenModal, modalItem }) {
     useEffect(() => {
         setName(modalItem?.name)
         setYear(modalItem?.year)
-        
+
     }, [modalItem])
+
+    function onUpdate(e, id) {
+
+        // e.preventDefault()
+
+        fetch(`https://64ca9c72700d50e3c7051e26.mockapi.io/movie/movies/${id}`, {
+
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+    }
 
     return (
         <section className="modal-section">
@@ -34,9 +48,9 @@ function MoviesModal({ openModal, setOpenModal, modalItem }) {
                     }
                 }}>
                     <div className="modal_inner">
-                        <input type="text" value={name} />
-                        <input type="text" value={year} />
-                        <button>done</button>
+                        <input type="text" value={name} onChange={(evt) => setName(evt.target.value)} />
+                        <input type="text" value={year} onChange={(evt) => setYear(evt.target.value)} />
+                        <button onClick={() => onUpdate(modalItem.id)}>done</button>
                     </div>
                 </div>
 
