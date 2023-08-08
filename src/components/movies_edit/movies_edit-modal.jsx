@@ -29,12 +29,8 @@ function MoviesModal({ openModal, setOpenModal, modalItem }) {
 
         // e.preventDefault()
 
-        fetch(`https://64ca9c72700d50e3c7051e26.mockapi.io/movie/movies/${id}`, {
-
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json'
-            },
+        axios.put(`https://64ca9c72700d50e3c7051e26.mockapi.io/movie/movies/${id}`, {
+            
             body: JSON.stringify(data)
         })
     }
