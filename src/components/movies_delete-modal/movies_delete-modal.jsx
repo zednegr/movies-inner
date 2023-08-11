@@ -35,10 +35,17 @@ function MoviesDelModal({ openDelModal, setOpenDelModal, modalDelData }) {
                     if (e.target.matches('.modal_edit')) {
                         setOpenDelModal(false)
                     }
+
+                    if (e.target.matches('.modal-delete-CloseBtn')) {
+                        setOpenDelModal(false)
+                    }
                 }}>
                     <div className="modal_inner">
 
-                        <button onClick={() => onDelete(modalDelData.id)}>OK</button>
+                        <h2>Aniq O'chirilsinmi ?</h2>
+
+                        <button className="modal-delete-CloseBtn">Close</button>
+                        <button onClick={() => onDelete(modalDelData.id)}>I'm sure 100%</button>
                     </div>
                 </div>
 
