@@ -89,8 +89,6 @@ function Create() {
             <div className="container">
                 <div className="create-wrapper">
 
-
-
                     <div className="input-wrapper">
                         <form>
                             <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />

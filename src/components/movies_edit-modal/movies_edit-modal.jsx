@@ -22,6 +22,10 @@ function MoviesModal({ openModal, setOpenModal, modalItem }) {
 
     const toast = useRef(null);
 
+    const showError = () => {
+        toast.current.show({ severity: 'error', summary: 'Error', detail: 'Oxirgacha to\'ldiring brat!', life: 3000 });
+    }
+    
     const showSuccess = () => {
         toast.current.show({ severity: 'success', summary: 'Success', detail: 'IQ ga gap yo bro o\'zgardi!', life: 3000 });
     }
@@ -49,6 +53,13 @@ function MoviesModal({ openModal, setOpenModal, modalItem }) {
     }, [modalItem])
 
     function onUpdate(id) {
+
+
+        if (name == '' || img == '' || time == '' || rating == '' || desc == '' || quality == '' || genre == '' || year == '' || url == '' || bg == '') {
+            showError()
+        } else {
+            setLoading(true)
+        }
 
         axios.put(`https://64ca9c72700d50e3c7051e26.mockapi.io/movie/movies/${id}`, {
             name, img, time, rating, desc, quality, genre, year, url, bg
