@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom"
 import { Toast } from 'primereact/toast';
 
 import "./create.scss"
+import Loading from "../../components/loading/loading"
 import axios from "axios";
 
 function Create() {
@@ -22,6 +23,7 @@ function Create() {
     // Button loading
 
     const [loading, setLoading] = useState(false)
+    const [loadingAnim, setLoadingAnim] = useState(true)
     const [inputValue, setInputValue] = useState('');
 
 
@@ -36,6 +38,11 @@ function Create() {
 
     const data = { 'name': name, 'img': img, 'time': time, 'rating': rating, 'desc': desc, 'quality': quality, 'genre': genre, 'year': year, 'url': url, 'bg': bg }
 
+
+    setTimeout((loadingAnim) => {
+        <Loading />
+    }, 4000);
+
     function onSubmit(e) {
         e.preventDefault()
 
@@ -46,16 +53,16 @@ function Create() {
 
             axios.post('https://64ca9c72700d50e3c7051e26.mockapi.io/movie/movies', {
 
-            name,
-            img,
-            time,
-            rating,
-            desc,
-            quality,
-            genre,
-            year,
-            url,
-            bg
+                name,
+                img,
+                time,
+                rating,
+                desc,
+                quality,
+                genre,
+                year,
+                url,
+                bg
 
             }).then(res => {
                 console.log(res);
