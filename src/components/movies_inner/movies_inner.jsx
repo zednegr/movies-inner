@@ -45,7 +45,7 @@ function MoviesInner() {
                                 <h4 className="movies_inner-about-h4">New Episodes</h4>
                             </div>
                             <div className="movies_inner-name">
-                                <h3 className="movies_inner-name-h3">{data?.name}</h3>
+                                <h3 className="movies_inner-name-h3">{data?.name.length > 20 ? data?.name.slice(0, 20) + '...' : data?.name}</h3>
                             </div>
 
                             <div className="movies_inner-info">
@@ -94,7 +94,7 @@ function MoviesInner() {
                             </div>
 
                             <div className="movies_inner-desc">
-                                <p className="movies_inner-desc-p">{data?.desc}</p>
+                                <p className="movies_inner-desc-p">{data?.desc.length > 555 ? data?.desc.slice(0, 555) + '...' : data?.desc}</p>
                             </div>
                         </div>
                     </div>
