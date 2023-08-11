@@ -19,6 +19,14 @@ function MoviesInner() {
     const { movieId } = useParams()
     const elModal = useRef()
 
+    const backgroundStyle = {
+        backgroundImage: `url(${data?.bg})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        height: '100vh',
+      };
+
     useEffect(() => {
         axios(`https://64ca9c72700d50e3c7051e26.mockapi.io/movie/movies/${movieId}`)
             .then((res) => setGetData(res.data))
@@ -33,7 +41,7 @@ function MoviesInner() {
 
     return (
         <section className="movies_inner">
-            <div className="movies-bg"></div>
+            <div className="movies-bg" style={backgroundStyle}>
                 <div className="container">
                     <div className="movies_inner-wrapper">
                         <div className="movies_inner-left">
@@ -108,10 +116,11 @@ function MoviesInner() {
                         }
                     }}>
                         <div className="modal-inner">
-                            <ReactPlayer url={data?.url} controls={true} width={'100%'} height={'100%'} playing={paus}/>
+                            <ReactPlayer url={data?.url} controls={true} width={'100%'} height={'100%'} playing={paus} />
                         </div>
                     </div>
                 </div>
+            </div>
         </section>
     )
 }

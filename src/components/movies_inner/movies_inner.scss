@@ -1,12 +1,17 @@
 .movies-bg {
     width: 100%;
-    min-height: 100vh;
-    background: url('https://img.freekino.net/movieposter/meg-tubsizlik-mahluqi_1665244878.jpg');
+    height: 100vh;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     background-blend-mode: darken;
     background-color: rgba(0, 0, 0, 0.789);
+}
+
+.movies-inner-bg {
+    width: 100%;
+    height: 100vh;
+    z-index: -100;
 }
 
 .movies_inner-wrapper {
