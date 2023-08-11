@@ -40,10 +40,10 @@ function MoviesEdit() {
                 <div className="flex flex-column align-items-center" style={{ flex: '1' }}>
                     <div className="text-center">
                         <i className="pi pi-exclamation-triangle" style={{ fontSize: '3rem' }}></i>
-                        <div className="font-bold text-xl my-3">Are you sure?</div>
+                        <div className="font-bold text-xl my-3">O'chirmoqchimisiz?</div>
                     </div>
                     <div className="flex gap-2">
-                        <Button onClick={(e) => { onDelete(item?.id), clear(false) }} type="button" label="Confirm" className="p-button-success w-6rem" />
+                        <Button onClick={(e) => { onDelete(item?.id), clear(false) }} type="button" label="I'm sure 100%" className="p-button-success w-6rem" />
                         <Button onClick={(e) => clear(false)} type="button" label="Cancel" className="p-button-warning w-6rem" />
                     </div>
                 </div>
@@ -63,8 +63,9 @@ function MoviesEdit() {
         return <Loading />
     }
 
-    
+
     function onDelete(id) {
+
 
         axios.delete(`https://64ca9c72700d50e3c7051e26.mockapi.io/movie/movies/${id}`)
 
@@ -98,7 +99,7 @@ function MoviesEdit() {
 
                                 <div className="movies_edit-card" key={item.id}>
                                     <Toast ref={toast} />
-                                    <Toast ref={toastBC} position="bottom-center" />
+                                    <Toast ref={toastBC} position="center" />
                                     <div className="movies_edit-img">
                                         <img className="movies_edit-img" src={item?.img} alt="Movie" />
                                     </div>
