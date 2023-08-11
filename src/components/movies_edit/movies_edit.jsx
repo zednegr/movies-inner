@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 
 import './movies_edit.scss'
+import Loading from "../../components/loading/loading"
 import MoviesModal from "../movies_edit-modal/movies_edit-modal"
 import axios from "axios"
 
@@ -8,7 +9,7 @@ function MoviesEdit() {
 
     const [data, setData] = useState()
     const [getData, setGetData] = useState()
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(true)
     const [openModal, setOpenModal] = useState(false)
     const [modalData, setModalData] = useState()
 
@@ -20,7 +21,13 @@ function MoviesEdit() {
             })
     }, [])
 
+    if (loading) {
+        return <Loading />
+    }
+
     function onDelete(id) {
+
+        setLoading(true)
 
         axios.delete(`https://64ca9c72700d50e3c7051e26.mockapi.io/movie/movies/${id}`, {
         })
