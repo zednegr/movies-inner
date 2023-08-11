@@ -1,0 +1,16 @@
+.movies_edit-wrapper {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 140px;
+}
+
+.movies_edit-card {
+    margin-top: 100px;
+    width: 294px;
+    height: calc(361px + 141px);
+    background-color: #000;
+}

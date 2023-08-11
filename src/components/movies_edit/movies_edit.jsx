@@ -39,31 +39,31 @@ function MoviesEdit() {
 
 
     return (
-        <section className='movies_edit-section'>
-            <div className="container">
-                <div className="movies_edit-wrapper">
+            <section className='movies_edit-section'>
+                <div className="container">
+                    <div className="movies_edit-wrapper">
 
-                    {
-                        getData?.map(item => {
-                            return (
-                                <div className="movies_edit-card" key={item.id}>
-                                    <img src={item?.img} alt="" />
-                                    <h1>{item?.name}</h1>
-                                    <h1>{item?.year}</h1>
-                                    <button onClick={() => onDelete(item.id)}>
-                                        Delete
-                                    </button>
-                                    <button onClick={() => onEdit(item)}>Edit</button>
-                                </div>
-                            )
-                        })
-                    }
+                        {
+                            getData?.map(item => {
+                                return (
+                                    <div className="movies_edit-card" key={item.id}>
+                                        <img src={item?.img} alt="" />
+                                        <h1>{item?.name}</h1>
+                                        <h1>{item?.year}</h1>
+                                        <button onClick={() => onDelete(item.id)}>
+                                            Delete
+                                        </button>
+                                        <button onClick={() => onEdit(item)}>Edit</button>
+                                    </div>
+                                )
+                            })
+                        }
 
-                    <MoviesModal openModal={openModal} setOpenModal={setOpenModal} modalItem={modalData} />
+                        <MoviesModal openModal={openModal} setOpenModal={setOpenModal} modalItem={modalData} />
+                    </div>
                 </div>
-            </div>
 
-        </section>
+            </section>
     )
 }
 
