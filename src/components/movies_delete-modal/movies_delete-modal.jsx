@@ -3,7 +3,7 @@ import { useState, useEffect } from "react"
 import "./movies_delete-modal.scss"
 import axios from "axios"
 
-function MoviesDelModal({openDelModal, setOpenDelModal}) {
+function MoviesDelModal({ openDelModal, setOpenDelModal, modalDelData }) {
 
     const [getData, setGetData] = useState()
     const [loading, setLoading] = useState(false)
@@ -16,12 +16,10 @@ function MoviesDelModal({openDelModal, setOpenDelModal}) {
             })
     }, [])
 
+
     function onDelete(id) {
 
-        setLoading(true)
-
-        axios.delete(`https://64ca9c72700d50e3c7051e26.mockapi.io/movie/movies/${id}`, {
-        })
+        axios.delete(`https://64ca9c72700d50e3c7051e26.mockapi.io/movie/movies/${id}`)
 
             .then((data) => {
                 setGetData(data)
@@ -39,8 +37,8 @@ function MoviesDelModal({openDelModal, setOpenDelModal}) {
                     }
                 }}>
                     <div className="modal_inner">
-                
-                        <button onClick={''}>OK</button>
+
+                        <button onClick={() => onDelete(modalDelData.id)}>OK</button>
                     </div>
                 </div>
 

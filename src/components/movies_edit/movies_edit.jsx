@@ -14,6 +14,7 @@ function MoviesEdit() {
     const [openModal, setOpenModal] = useState(false)
     const [openDelModal, setOpenDelModal] = useState(false)
     const [modalData, setModalData] = useState()
+    const [modalDelData, setModalDelData] = useState()
 
     useEffect(() => {
         axios('https://64ca9c72700d50e3c7051e26.mockapi.io/movie/movies')
@@ -28,8 +29,9 @@ function MoviesEdit() {
     }
 
 
-    function opensdaModal() {
+    function opensdaModal(item) {
         setOpenDelModal(true)
+        setModalDelData(item)
     }
 
 
@@ -59,7 +61,7 @@ function MoviesEdit() {
                                         <div className="movie-year"><h5 className='movie-year-h5'>{item?.year}</h5></div>
                                     </div>
 
-                                    <button onClick={() => opensdaModal()}>Delete</button>
+                                    <button onClick={() => opensdaModal(item)}>Delete</button>
                                     <button onClick={() => onEdit(item)}>Edit</button>
                                 </div>
                             )
@@ -67,7 +69,7 @@ function MoviesEdit() {
                     }
 
                     <MoviesModal openModal={openModal} setOpenModal={setOpenModal} modalItem={modalData} />
-                    <MoviesDelModal openDelModal={openDelModal} setOpenDelModal={setOpenDelModal} />
+                    <MoviesDelModal openDelModal={openDelModal} setOpenDelModal={setOpenDelModal} modalDelData={modalDelData} />
                 </div>
             </div>
 
