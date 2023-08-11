@@ -40,7 +40,7 @@ function MoviesEdit() {
                 <div className="flex flex-column align-items-center" style={{ flex: '1' }}>
                     <div className="text-center">
                         <i className="pi pi-exclamation-triangle" style={{ fontSize: '3rem' }}></i>
-                        <div className="font-bold text-xl my-3">O'chirmoqchimisiz?</div>
+                        <div className="font-bold text-xl my-3">Delete!</div>
                     </div>
                     <div className="flex gap-2">
                         <Button onClick={(e) => { onDelete(item?.id), clear(false) }} type="button" label="I'm sure 100%" className="p-button-success w-6rem" />
