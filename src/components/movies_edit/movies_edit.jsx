@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 
 import './movies_edit.scss'
-import MoviesModal from "./movies_edit-modal"
+import MoviesModal from "../movies_edit-modal/movies_edit-modal"
 import axios from "axios"
 
 function MoviesEdit() {
