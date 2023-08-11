@@ -14,7 +14,7 @@
 
 .modal_inner {
     width: 400px;
-    height: 350px;
+    height: auto;
     padding: 20px;
     background-color: #fff;
     border-radius: 10px;
@@ -22,4 +22,35 @@
 
 .modal_edit-open {
     display: flex;
+}
+
+.modal-delete-h2 {
+    font-family: Montserrat;
+}
+.movies_delete-modal-btns {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.modal-delete-CloseBtn {
+    font-family: Poppins;
+    padding: 9px 16px;
+    background-color: green;
+    border: none;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.modal-delete-Btn {
+    font-family: Poppins;
+    padding: 9px 16px;
+    background-color: red;
+    border: none;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
 }

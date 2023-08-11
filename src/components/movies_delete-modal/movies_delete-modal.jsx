@@ -42,10 +42,12 @@ function MoviesDelModal({ openDelModal, setOpenDelModal, modalDelData }) {
                 }}>
                     <div className="modal_inner">
 
-                        <h2>Aniq O'chirilsinmi ?</h2>
+                        <h2 className="modal-delete-h2">Aniq O'chirilsinmi ?</h2>
 
-                        <button className="modal-delete-CloseBtn">Close</button>
-                        <button onClick={() => onDelete(modalDelData.id)}>I'm sure 100%</button>
+                        <div className="movies_delete-modal-btns">
+                            <button className="modal-delete-CloseBtn">Close</button>
+                            <button className="modal-delete-Btn" onClick={() => onDelete(modalDelData.id)}>I'm sure 100%</button>
+                        </div>
                     </div>
                 </div>
 
