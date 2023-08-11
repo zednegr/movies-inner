@@ -1,4 +1,6 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
+import { Button } from 'primereact/button';
+import { Toast } from 'primereact/toast';
 
 import './movies_edit.scss'
 import Loading from "../../components/loading/loading"
@@ -16,6 +18,39 @@ function MoviesEdit() {
     const [modalData, setModalData] = useState()
     const [modalDelData, setModalDelData] = useState()
 
+    const toast = useRef(null);
+    const toastBC = useRef(null);
+
+
+    const clear = (submit) => {
+        toastBC.current.clear();
+        submit && show();
+    };
+
+    const show = () => {
+        toast.current.show({ severity: 'success', summary: 'Submission Received', detail: 'Thank you, we have received your submission.' });
+    };
+
+    const confirm = (item) => {
+        toastBC.current.show({
+            severity: 'info',
+            sticky: true,
+            className: 'border-none',
+            content: (
+                <div className="flex flex-column align-items-center" style={{ flex: '1' }}>
+                    <div className="text-center">
+                        <i className="pi pi-exclamation-triangle" style={{ fontSize: '3rem' }}></i>
+                        <div className="font-bold text-xl my-3">Are you sure?</div>
+                    </div>
+                    <div className="flex gap-2">
+                        <Button onClick={(e) => { onDelete(item?.id), clear(false) }} type="button" label="Confirm" className="p-button-success w-6rem" />
+                        <Button onClick={(e) => clear(false)} type="button" label="Cancel" className="p-button-warning w-6rem" />
+                    </div>
+                </div>
+            )
+        });
+    };
+
     useEffect(() => {
         axios('https://64ca9c72700d50e3c7051e26.mockapi.io/movie/movies')
             .then((res) => setGetData(res.data))
@@ -28,11 +63,21 @@ function MoviesEdit() {
         return <Loading />
     }
 
+    
+    function onDelete(id) {
 
-    function opensdaModal(item) {
-        setOpenDelModal(true)
-        setModalDelData(item)
+        axios.delete(`https://64ca9c72700d50e3c7051e26.mockapi.io/movie/movies/${id}`)
+
+            .then((data) => {
+                // setGetData(data)
+                // setLoading(false)
+            })
     }
+
+    // function opensdaModal(item) {
+    //     setOpenDelModal(true)
+    //     setModalDelData(item)
+    // }
 
 
     function onEdit(item) {
@@ -50,8 +95,10 @@ function MoviesEdit() {
                     {
                         getData?.map(item => {
                             return (
-                                <div className="movies_edit-card" key={item.id}>
 
+                                <div className="movies_edit-card" key={item.id}>
+                                    <Toast ref={toast} />
+                                    <Toast ref={toastBC} position="bottom-center" />
                                     <div className="movies_edit-img">
                                         <img className="movies_edit-img" src={item?.img} alt="Movie" />
                                     </div>
@@ -62,7 +109,7 @@ function MoviesEdit() {
                                     </div>
 
                                     <div className="movies_edit-btns">
-                                        <button className="movies_del-btn" onClick={() => opensdaModal(item)}>Delete</button>
+                                        <button className="movies_del-btn" onClick={() => confirm(item)}>Delete</button>
                                         <button className="movies_edit-btn" onClick={() => onEdit(item)}>Edit</button>
                                     </div>
                                 </div>
@@ -71,7 +118,7 @@ function MoviesEdit() {
                     }
 
                     <MoviesModal openModal={openModal} setOpenModal={setOpenModal} modalItem={modalData} />
-                    <MoviesDelModal openDelModal={openDelModal} setOpenDelModal={setOpenDelModal} modalDelData={modalDelData} />
+                    {/* <MoviesDelModal openDelModal={openDelModal} setOpenDelModal={setOpenDelModal} modalDelData={modalDelData} /> */}
                 </div>
             </div>
 
