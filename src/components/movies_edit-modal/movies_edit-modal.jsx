@@ -40,9 +40,14 @@ function MoviesModal({ openModal, setOpenModal, modalItem }) {
                     }
                 }}>
                     <div className="modal_inner">
-                        <input type="text" value={name} onChange={(evt) => setName(evt.target.value)} />
-                        <input type="text" value={year} onChange={(evt) => setYear(evt.target.value)} />
-                        <button onClick={() => onUpdate(modalItem?.id)}>done</button>
+
+                        <h2 className="modal_edit-h2">Filmni Tahrirlash.</h2>
+                        <form>
+                            <input type="text" value={name} onChange={(evt) => setName(evt.target.value)} />
+                            <input type="text" value={year} onChange={(evt) => setYear(evt.target.value)} />
+                        </form>
+
+                        <button className="modal_edit-btn" onClick={() => onUpdate(modalItem?.id)}>done</button>
                     </div>
                 </div>
 
