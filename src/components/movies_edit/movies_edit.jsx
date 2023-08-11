@@ -61,8 +61,10 @@ function MoviesEdit() {
                                         <div className="movie-year"><h5 className='movie-year-h5'>{item?.year}</h5></div>
                                     </div>
 
-                                    <button onClick={() => opensdaModal(item)}>Delete</button>
-                                    <button onClick={() => onEdit(item)}>Edit</button>
+                                    <div className="movies_edit-btns">
+                                        <button className="movies_del-btn" onClick={() => opensdaModal(item)}>Delete</button>
+                                        <button className="movies_edit-btn" onClick={() => onEdit(item)}>Edit</button>
+                                    </div>
                                 </div>
                             )
                         })
