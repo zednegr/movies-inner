@@ -47,7 +47,7 @@ function Header() {
                                                 </div>
                                                 <div className="card-desc">
 
-                                                    <div className="movie-name"><h4 className='movie-name-h4'>{item?.name.length > 15 ? item?.name.slice(0, 10) + "..." : item?.name}</h4></div>
+                                                    <div className="movie-name"><h4 className='movie-name-h4'>{item?.name.length > 10 ? item?.name.slice(0, 14) + "..." : item?.name}</h4></div>
                                                     <div className="movie-year"><h5 className='movie-year-h5'>{item?.year}</h5></div>
 
                                                 </div>

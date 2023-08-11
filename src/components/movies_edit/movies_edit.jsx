@@ -47,7 +47,7 @@ function MoviesEdit() {
                             getData?.map(item => {
                                 return (
                                     <div className="movies_edit-card" key={item.id}>
-                                        <img src={item?.img} alt="" />
+                                        <img className="movies_edit-img" src={item?.img} alt="" />
                                         <h1>{item?.name}</h1>
                                         <h1>{item?.year}</h1>
                                         <button onClick={() => onDelete(item.id)}>
