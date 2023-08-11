@@ -48,6 +48,8 @@ function MoviesEdit() {
                             return (
                                 <div className="movies_edit-card" key={item.id}>
                                     <img src={item?.img} alt="" />
+                                    <h1>{item?.name}</h1>
+                                    <h1>{item?.year}</h1>
                                     <button onClick={() => onDelete(item.id)}>
                                         Delete
                                     </button>
