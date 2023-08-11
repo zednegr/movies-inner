@@ -1,4 +1,6 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
+import { Toast } from 'primereact/toast';
+
 
 import "./movies_edit-modal.scss"
 import axios from "axios"
@@ -17,6 +19,12 @@ function MoviesModal({ openModal, setOpenModal, modalItem }) {
     const [year, setYear] = useState()
     const [url, setUrl] = useState()
     const [bg, setBg] = useState()
+
+    const toast = useRef(null);
+
+    const showSuccess = () => {
+        toast.current.show({ severity: 'success', summary: 'Success', detail: 'IQ ga gap yo bro o\'zgardi!', life: 3000 });
+    }
 
     useEffect(() => {
         axios('https://64ca9c72700d50e3c7051e26.mockapi.io/movie/movies')
@@ -45,10 +53,17 @@ function MoviesModal({ openModal, setOpenModal, modalItem }) {
         axios.put(`https://64ca9c72700d50e3c7051e26.mockapi.io/movie/movies/${id}`, {
             name, img, time, rating, desc, quality, genre, year, url, bg
         }).then((res) => console.log(res))
+
+            .then((res) => {
+
+                showSuccess()
+                setOpenModal(false)
+            })
     }
 
     return (
         <section className="modal-section">
+            <Toast ref={toast} />
             <div className="container">
                 <div className={`modal_edit ${openModal ? 'modal_edit-open' : ''}`} onClick={(e) => {
                     if (e.target.matches('.modal_edit')) {

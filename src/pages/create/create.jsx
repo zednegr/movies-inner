@@ -39,9 +39,9 @@ function Create() {
     const data = { 'name': name, 'img': img, 'time': time, 'rating': rating, 'desc': desc, 'quality': quality, 'genre': genre, 'year': year, 'url': url, 'bg': bg }
 
 
-    setTimeout((loadingAnim) => {
-        <Loading />
-    }, 4000);
+    // setTimeout((loadingAnim) => {
+    //     <Loading />
+    // }, 4000);
 
     function onSubmit(e) {
         e.preventDefault()
