@@ -33,7 +33,7 @@ function MoviesInner() {
 
     return (
         <section className="movies_inner">
-            <div className="movies_bg" src={data?.bg}>
+            <div className="movies-bg"></div>
                 <div className="container">
                     <div className="movies_inner-wrapper">
                         <div className="movies_inner-left">
@@ -112,7 +112,6 @@ function MoviesInner() {
                         </div>
                     </div>
                 </div>
-            </div>
         </section>
     )
 }
