@@ -18,16 +18,16 @@ function Navbar() {
                     </Link>
 
                     <ul className='nav_list'>
+                        <Link to={'/'}>
+                            <p>HOME</p>
+                        </Link>
+                        <span>|</span>
                         <Link to={'/create'}>
                             <p>API</p>
                         </Link>
                         <span>|</span>
                         <Link to={'/movies_edit'}>
                             <p>EDIT API</p>
-                        </Link>
-                        <span>|</span>
-                        <Link>
-                            <p>TV SHOW</p>
                         </Link>
                         <span>|</span>
                         <Link>
