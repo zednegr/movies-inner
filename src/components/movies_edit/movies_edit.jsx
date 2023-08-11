@@ -39,31 +39,36 @@ function MoviesEdit() {
 
 
     return (
-            <section className='movies_edit-section'>
-                <div className="container">
-                    <div className="movies_edit-wrapper">
+        <section className='movies_edit-section'>
+            <div className="container">
+                <div className="movies_edit-wrapper">
 
-                        {
-                            getData?.map(item => {
-                                return (
-                                    <div className="movies_edit-card" key={item.id}>
-                                        <img className="movies_edit-img" src={item?.img} alt="" />
-                                        <h1>{item?.name}</h1>
-                                        <h1>{item?.year}</h1>
-                                        <button onClick={() => onDelete(item.id)}>
-                                            Delete
-                                        </button>
-                                        <button onClick={() => onEdit(item)}>Edit</button>
+                    {
+                        getData?.map(item => {
+                            return (
+                                <div className="movies_edit-card" key={item.id}>
+
+                                    <div className="card-avatar">
+                                        <img src={item?.img} alt="Movie" />
                                     </div>
-                                )
-                            })
-                        }
 
-                        <MoviesModal openModal={openModal} setOpenModal={setOpenModal} modalItem={modalData} />
-                    </div>
+                                    <div className="card-desc">
+                                        <div className="movie-name"><h4 className='movie-name-h4'>{item?.name.length > 10 ? item?.name.slice(0, 14) + "..." : item?.name}</h4></div>
+                                        <div className="movie-year"><h5 className='movie-year-h5'>{item?.year}</h5></div>
+                                    </div>
+
+                                    <button onClick={() => onDelete(item.id)}>Delete</button>
+                                    <button onClick={() => onEdit(item)}>Edit</button>
+                                </div>
+                            )
+                        })
+                    }
+
+                    <MoviesModal openModal={openModal} setOpenModal={setOpenModal} modalItem={modalData} />
                 </div>
+            </div>
 
-            </section>
+        </section>
     )
 }
 
