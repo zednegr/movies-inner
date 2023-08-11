@@ -48,11 +48,11 @@ function MoviesEdit() {
                             return (
                                 <div className="movies_edit-card" key={item.id}>
 
-                                    <div className="card-avatar">
-                                        <img src={item?.img} alt="Movie" />
+                                    <div className="movies_edit-img">
+                                        <img className="movies_edit-img" src={item?.img} alt="Movie" />
                                     </div>
 
-                                    <div className="card-desc">
+                                    <div className="movies_edit-desc">
                                         <div className="movie-name"><h4 className='movie-name-h4'>{item?.name.length > 10 ? item?.name.slice(0, 14) + "..." : item?.name}</h4></div>
                                         <div className="movie-year"><h5 className='movie-year-h5'>{item?.year}</h5></div>
                                     </div>
