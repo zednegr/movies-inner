@@ -3,6 +3,7 @@ import { useState, useEffect } from "react"
 import './movies_edit.scss'
 import Loading from "../../components/loading/loading"
 import MoviesModal from "../movies_edit-modal/movies_edit-modal"
+import MoviesDelModal from "../movies_delete-modal/movies_delete-modal"
 import axios from "axios"
 
 function MoviesEdit() {
@@ -11,6 +12,7 @@ function MoviesEdit() {
     const [getData, setGetData] = useState()
     const [loading, setLoading] = useState(true)
     const [openModal, setOpenModal] = useState(false)
+    const [openDelModal, setOpenDelModal] = useState(false)
     const [modalData, setModalData] = useState()
 
     useEffect(() => {
@@ -25,18 +27,11 @@ function MoviesEdit() {
         return <Loading />
     }
 
-    function onDelete(id) {
 
-        setLoading(true)
-
-        axios.delete(`https://64ca9c72700d50e3c7051e26.mockapi.io/movie/movies/${id}`, {
-        })
-
-            .then((data) => {
-                setData(data)
-                setLoading(false)
-            })
+    function opensdaModal() {
+        setOpenDelModal(true)
     }
+
 
     function onEdit(item) {
 
@@ -64,7 +59,7 @@ function MoviesEdit() {
                                         <div className="movie-year"><h5 className='movie-year-h5'>{item?.year}</h5></div>
                                     </div>
 
-                                    <button onClick={() => onDelete(item.id)}>Delete</button>
+                                    <button onClick={() => opensdaModal()}>Delete</button>
                                     <button onClick={() => onEdit(item)}>Edit</button>
                                 </div>
                             )
@@ -72,6 +67,7 @@ function MoviesEdit() {
                     }
 
                     <MoviesModal openModal={openModal} setOpenModal={setOpenModal} modalItem={modalData} />
+                    <MoviesDelModal openDelModal={openDelModal} setOpenDelModal={setOpenDelModal} />
                 </div>
             </div>
 
