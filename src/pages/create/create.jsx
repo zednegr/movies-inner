@@ -102,7 +102,7 @@ function Create() {
                             <input type="text" placeholder="Url" value={url} onChange={(e) => setUrl(e.target.value)} />
                             <input type="text" placeholder="Background" value={bg} onChange={(e) => setBg(e.target.value)} />
                             <button className={`btn-slide ${loading ? 'loading' : ''}`} onClick={onSubmit} disabled={loading}>
-                                {loading ? 'Yuborilmoqda...' : 'Yuborish'}
+                                {loading ? 'Yuborilmoqda' : 'Yuborish'}
                             </button>
 
                             <div className="back">
