@@ -67,6 +67,11 @@
     border-radius: 10px;
     cursor: pointer;
     font-size: 16px;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        background-color: rgb(123, 0, 0);
+    }
 }
 
 .movies_edit-btn {
@@ -78,4 +83,9 @@
     border-radius: 10px;
     cursor: pointer;
     font-size: 16px;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        background-color: rgb(0, 85, 0);
+    }
 }
