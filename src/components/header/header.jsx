@@ -20,7 +20,7 @@ function Header() {
                 setLoading(false)
             })
     }, [])
-    
+
     if (loading) {
         return <Loading />
     }
@@ -52,9 +52,6 @@ function Header() {
 
                                                 </div>
                                                 <div className="card-data">
-<h1>
-    dsd
-</h1>
                                                     <div className="card-data-qualty"><p className='card-data-qualty-p'>{item?.quality}</p></div>
 
                                                     <div className="card-min-reyting">
