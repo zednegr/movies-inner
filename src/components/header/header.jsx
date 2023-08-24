@@ -58,7 +58,7 @@ function Header() {
 
                                                         <div className="card-min"><img className='MovieClock' src={MovieClock} width={'13px'} /><p className='card-min-p'>{item?.time}</p></div>
                                                         <div className="card-reyting"><img className='MovieStar' src={MovieStar} width={'12px'} /><p className='card-reyting-p'>{item?.rating}</p></div>
-
+                                                        <h1>sadasd</h1>
                                                     </div>
 
                                                 </div>
