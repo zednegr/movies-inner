@@ -51,7 +51,7 @@ function Create() {
         } else {
             setLoading(true)
 
-            axios.post('https://64ca9c72700d50e3c7051e26.mockapi.io/movie/movies', {
+            axios.post('https://64e8e93299cf45b15fe0502c.mockapi.io/movie/movie', {
 
                 name,
                 img,
