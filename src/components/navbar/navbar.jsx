@@ -22,11 +22,11 @@ function Navbar() {
                             <p>HOME</p>
                         </Link>
                         <span>|</span>
-                        <Link to={'/create'}>
-                            <p>API</p>
+                        <Link to={''}>
+                            <p>ADD API</p>
                         </Link>
                         <span>|</span>
-                        <Link to={'/movies_edit'}>
+                        <Link to={''}>
                             <p>EDIT API</p>
                         </Link>
                         <span>|</span>
