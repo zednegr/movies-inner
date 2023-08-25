@@ -12,9 +12,7 @@ function Hero() {
 
     return (
         <section className='hero-section'>
-                    <Navbar />
-
-
+            <Navbar />
             <Swiper
 
                 slidesPerView={1}
