@@ -25,7 +25,7 @@ function MoviesModal({ openModal, setOpenModal, modalItem }) {
     const showError = () => {
         toast.current.show({ severity: 'error', summary: 'Error', detail: 'Oxirgacha to\'ldiring brat!', life: 3000 });
     }
-    
+
     const showSuccess = () => {
         toast.current.show({ severity: 'success', summary: 'Success', detail: 'IQ ga gap yo bro o\'zgardi!', life: 3000 });
     }
@@ -66,7 +66,6 @@ function MoviesModal({ openModal, setOpenModal, modalItem }) {
         }).then((res) => console.log(res))
 
             .then((res) => {
-
                 showSuccess()
                 setOpenModal(false)
             })
