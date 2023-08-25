@@ -31,7 +31,7 @@ function MoviesModal({ openModal, setOpenModal, modalItem }) {
     }
 
     useEffect(() => {
-        axios('https://64ca9c72700d50e3c7051e26.mockapi.io/movie/movies')
+        axios('https://64e8e93299cf45b15fe0502c.mockapi.io/movie/movie')
             .then((res) => setGetData(res.data))
             .finally(() => {
                 setLoading(false)
@@ -61,7 +61,7 @@ function MoviesModal({ openModal, setOpenModal, modalItem }) {
             setLoading(true)
         }
 
-        axios.put(`https://64ca9c72700d50e3c7051e26.mockapi.io/movie/movies/${id}`, {
+        axios.put(`https://64e8e93299cf45b15fe0502c.mockapi.io/movie/movie/${id}`, {
             name, img, time, rating, desc, quality, genre, year, url, bg
         }).then((res) => console.log(res))
 
