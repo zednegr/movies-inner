@@ -65,7 +65,6 @@ function MoviesModal({ openModal, setOpenModal, modalItem }) {
         axios.put(`https://64e8e93299cf45b15fe0502c.mockapi.io/movie/movie/${id}`, {
             name, img, time, rating, desc, quality, genre, year, url, bg
         })
-            // .then((res) => console.log(res))
             .then((res) => {
                 setRefresh(false)
                 showSuccess()
