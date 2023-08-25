@@ -15,7 +15,7 @@ function MoviesInner() {
 
     const [data, setGetData] = useState()
     const [loading, setLoading] = useState(true)
-    const [paus, setPaus] = useState(true)
+    const [paus, setPaus] = useState(false)
     const { movieId } = useParams()
     const elModal = useRef()
 
