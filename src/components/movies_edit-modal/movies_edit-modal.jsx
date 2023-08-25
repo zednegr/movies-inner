@@ -21,6 +21,7 @@ function MoviesModal({ openModal, setOpenModal, modalItem }) {
     const [bg, setBg] = useState()
 
     const toast = useRef(null);
+    const [refresh, setRefresh] = useState()
 
     const showError = () => {
         toast.current.show({ severity: 'error', summary: 'Error', detail: 'Oxirgacha to\'ldiring brat!', life: 3000 });
@@ -36,7 +37,7 @@ function MoviesModal({ openModal, setOpenModal, modalItem }) {
             .finally(() => {
                 setLoading(false)
             })
-    }, [])
+    }, [refresh])
 
     useEffect(() => {
         setName(modalItem?.name)
@@ -54,18 +55,19 @@ function MoviesModal({ openModal, setOpenModal, modalItem }) {
 
     function onUpdate(id) {
 
-
         if (name == '' || img == '' || time == '' || rating == '' || desc == '' || quality == '' || genre == '' || year == '' || url == '' || bg == '') {
             showError()
         } else {
             setLoading(true)
         }
+        setRefresh(true)
 
         axios.put(`https://64e8e93299cf45b15fe0502c.mockapi.io/movie/movie/${id}`, {
             name, img, time, rating, desc, quality, genre, year, url, bg
-        }).then((res) => console.log(res))
-
+        })
+            // .then((res) => console.log(res))
             .then((res) => {
+                setRefresh(false)
                 showSuccess()
                 setOpenModal(false)
             })

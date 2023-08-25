@@ -69,7 +69,6 @@ function MoviesEdit() {
 
         setRefresh(true)
         axios.delete(`https://64e8e93299cf45b15fe0502c.mockapi.io/movie/movie/${id}`)
-
             .then((data) => {
                 setRefresh(false)
             })
