@@ -17,6 +17,7 @@ function MoviesEdit() {
     const [openDelModal, setOpenDelModal] = useState(false)
     const [modalData, setModalData] = useState()
     const [modalDelData, setModalDelData] = useState()
+    const [refresh, setRefresh] = useState()
 
     const toast = useRef(null);
     const toastBC = useRef(null);
@@ -57,7 +58,7 @@ function MoviesEdit() {
             .finally(() => {
                 setLoading(false)
             })
-    }, [])
+    }, [refresh])
 
     if (loading) {
         return <Loading />
@@ -66,12 +67,11 @@ function MoviesEdit() {
 
     function onDelete(id) {
 
-
-        axios.delete(`https://64e8e93299cf45b15fe0502c.mockapi.io/movie/movie${id}`)
+        setRefresh(true)
+        axios.delete(`https://64e8e93299cf45b15fe0502c.mockapi.io/movie/movie/${id}`)
 
             .then((data) => {
-                // setGetData(data)
-                // setLoading(false)
+                setRefresh(false)
             })
     }
 
@@ -82,7 +82,6 @@ function MoviesEdit() {
 
 
     function onEdit(item) {
-
         setOpenModal(true)
         setModalData(item)
     }
