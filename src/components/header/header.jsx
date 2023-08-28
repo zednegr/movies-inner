@@ -46,7 +46,7 @@ function Header() {
                                                     <img src={item?.img} alt="Movie" />
                                                 </div>
                                                 <div className="card-desc">
-
+<h1>asdasd</h1>
                                                     <div className="movie-name"><h4 className='movie-name-h4'>{item?.name.length > 10 ? item?.name.slice(0, 12) + "..." : item?.name}</h4></div>
                                                     <div className="movie-year"><h5 className='movie-year-h5'>{item?.year}</h5></div>
 
