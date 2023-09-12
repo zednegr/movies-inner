@@ -9,16 +9,18 @@ import axios from "axios";
 function Create() {
 
 
+    // const [name, setName] = useState('')
+    // const [img, setImg] = useState('')
+    // const [time, setTime] = useState('')
+    // const [rating, setRating] = useState('')
+    // const [desc, setDesc] = useState('')
+    // const [quality, setQuality] = useState('')
+    // const [genre, setGenre] = useState('')
+    // const [year, setYear] = useState('')
+    // const [url, setUrl] = useState('')
+    // const [bg, setBg] = useState('')
+
     const [name, setName] = useState('')
-    const [img, setImg] = useState('')
-    const [time, setTime] = useState('')
-    const [rating, setRating] = useState('')
-    const [desc, setDesc] = useState('')
-    const [quality, setQuality] = useState('')
-    const [genre, setGenre] = useState('')
-    const [year, setYear] = useState('')
-    const [url, setUrl] = useState('')
-    const [bg, setBg] = useState('')
 
     // Button loading
 
@@ -36,47 +38,48 @@ function Create() {
     }
 
 
-    const data = { 'name': name, 'img': img, 'time': time, 'rating': rating, 'desc': desc, 'quality': quality, 'genre': genre, 'year': year, 'url': url, 'bg': bg }
+    // const data = { 'name': name, 'img': img, 'time': time, 'rating': rating, 'desc': desc, 'quality': quality, 'genre': genre, 'year': year, 'url': url, 'bg': bg }
 
 
-    // setTimeout((loadingAnim) => {
-    //     <Loading />
-    // }, 4000);
+    // name == '' || img == '' || time == '' || rating == '' || desc == '' || quality == '' || genre == '' || year == '' || url == '' || bg == ''
 
     function onSubmit(e) {
         e.preventDefault()
 
-        if (name == '' || img == '' || time == '' || rating == '' || desc == '' || quality == '' || genre == '' || year == '' || url == '' || bg == '') {
+        if (name == '') {
             showError()
         } else {
             setLoading(true)
 
-            axios.post('https://64e8e93299cf45b15fe0502c.mockapi.io/movie/movie', {
+            axios.post('http://esystem.uz/room-create/', {
+
+                // name,
+                // img,
+                // time,
+                // rating,
+                // desc,
+                // quality,
+                // genre,
+                // year,
+                // url,
+                // bg
 
                 name,
-                img,
-                time,
-                rating,
-                desc,
-                quality,
-                genre,
-                year,
-                url,
-                bg
-
             }).then(res => {
                 console.log(res);
                 setLoading(false)
+                // setName('')
+                // setImg('')
+                // setTime('')
+                // setRating('')
+                // setDesc('')
+                // setQuality('')
+                // setGenre('')
+                // setYear('')
+                // setUrl('')
+                // setBg('')
+
                 setName('')
-                setImg('')
-                setTime('')
-                setRating('')
-                setDesc('')
-                setQuality('')
-                setGenre('')
-                setYear('')
-                setUrl('')
-                setBg('')
 
                 showSuccess()
             })
@@ -91,7 +94,7 @@ function Create() {
 
                     <div className="input-wrapper">
                         <form>
-                            <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
+                            {/* <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
                             <input type="text" placeholder="Img" value={img} onChange={(e) => setImg(e.target.value)} />
                             <input type="text" placeholder="Time" value={time} onChange={(e) => setTime(e.target.value)} />
                             <input type="text" placeholder="Rating" value={rating} onChange={(e) => setRating(e.target.value)} />
@@ -100,7 +103,9 @@ function Create() {
                             <input type="text" placeholder="Genre" value={genre} onChange={(e) => setGenre(e.target.value)} />
                             <input type="text" placeholder="Year" value={year} onChange={(e) => setYear(e.target.value)} />
                             <input type="text" placeholder="Url" value={url} onChange={(e) => setUrl(e.target.value)} />
-                            <input type="text" placeholder="Background" value={bg} onChange={(e) => setBg(e.target.value)} />
+                            <input type="text" placeholder="Background" value={bg} onChange={(e) => setBg(e.target.value)} /> */}
+                            <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
+                                
                             <button className={`btn-slide ${loading ? 'loading' : ''}`} onClick={onSubmit} disabled={loading}>
                                 {loading ? 'Yuborilmoqda' : 'Yuborish'}
                             </button>

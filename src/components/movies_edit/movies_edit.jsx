@@ -53,7 +53,7 @@ function MoviesEdit() {
     };
 
     useEffect(() => {
-        axios('https://64e8e93299cf45b15fe0502c.mockapi.io/movie/movie')
+        axios('http://esystem.uz/room/')
             .then((res) => setGetData(res.data))
             .finally(() => {
                 setLoading(false)
