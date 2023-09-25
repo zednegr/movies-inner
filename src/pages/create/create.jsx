@@ -112,7 +112,7 @@ function Create() {
 
                             <div className="back">
                                 <NavLink to={'/'}>
-                                    {/* <p>Back to Home</p> */}
+                                    <p>Back to Home</p>
                                 </NavLink>
                             </div>
                         </form>
