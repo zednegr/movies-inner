@@ -20,8 +20,6 @@ function App() {
         <Route path='/create' element={<Create />} />
         <Route path='/movies_edit' element={<MoviesEdit />} />
       </Routes>
-
-      fsdfsa
     </>
   )
 }
